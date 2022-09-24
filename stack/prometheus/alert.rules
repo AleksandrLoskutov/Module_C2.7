@@ -1,0 +1,29 @@
+groups:
+- name: Task C2.7
+  rules:
+  - alert: System Restarted
+    expr: ceil(((node_time_seconds - node_boot_time_seconds) / 60)) < 5
+    for: 0m
+    labels:
+      severity: critical
+    annotations:
+      summary: "System restarted (instance {{ $labels.instance }})"
+      description: "{{ $labels.instance }} requires a restarted.\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+#
+  - alert: lms.skillfactory.ru - HttpFailure
+    expr: probe_http_status_code != 200
+    for: 0m
+    labels:
+      severity: critical
+    annotations:
+      summary: lms.skillfactory.ru HTTP failure (instance {{ $labels.instance }})
+      description: "HTTP status code is not 200\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+#
+  - alert: lms.skillfactory.ru - High Duration
+    expr: avg_over_time(probe_http_duration_seconds[1m]) > 5
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: Slow HTTP (instance {{ $labels.instance }})
+      description: "lms.skillfactory.ru - High Duration\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
