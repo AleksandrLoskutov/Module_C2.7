@@ -5,3 +5,4 @@ Grafana dashboard
 ![Grafana dashboard](/images/grafana.png)
 
 Prometheus_targets
+![Prometheus_targets](/images/prometeus_targets.png)
