@@ -1,2 +1,4 @@
-# Module_C2.7
+# Module_C2
 C2.7 Практикум
+
+![Grafana dashboard](/images/grafana.jpg)
