@@ -24,3 +24,8 @@ C2.7 Практикум
 
 8. AlertManager alert when system restarted
 ![AlertManager_alert](/images/alertmanager_alert.png)
+
+9. Alert in Telegram when system restarted
+![Bot_alert](/images/bot.png)
+
+10. Конфиги используемых сервисов лежат в каталоге ***stack***
